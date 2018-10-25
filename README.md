@@ -1,0 +1,2 @@
+# ionic
+all ionic applications
