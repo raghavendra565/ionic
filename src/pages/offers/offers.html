@@ -1,0 +1,21 @@
+<!--
+  Generated template for the OffersPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>OFFERS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list style="color: #bb9175 !important; border-bottom: 3px; border-color:white !important;  " *ngFor="let a of offersData">
+    <h2>{{a.business_publicname}}</h2>
+    <h4>{{a.promo_offers}} <br> <span float-right>2018/10/09 13:45</span></h4>
+  </ion-list><br>
+</ion-content>

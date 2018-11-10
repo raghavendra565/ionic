@@ -1,0 +1,78 @@
+<!--
+  Generated template for the SignupPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SIGN UP</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row wrap padding>
+      <ion-col col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6>
+          <!--<button ion-button button-clear clear (click)="onEvent('onSkip')">{{data.skip}}</button>-->
+          <!---Logo-->
+        <ion-thumbnail>
+          <img src="assets/images/logo/50.png" >
+        </ion-thumbnail>
+          <!---Input field username-->
+        <ion-item no-padding color="accent">
+          <ion-label color="secondary" floating >First Name</ion-label>
+          <ion-input color="secondary" required type="text" [(ngModel)]="first_name" ></ion-input>
+        </ion-item>
+          <!---Input field password-->
+        <ion-item color="accent" no-padding>
+          <ion-label color="secondary" floating>Last Name</ion-label>
+          <ion-input color="secondary" required type="text" [(ngModel)]="last_name"></ion-input>
+        </ion-item>
+        <ion-item color="accent" no-padding>
+          <ion-label color="secondary" floating>Phone</ion-label>
+          <ion-input required type="text" [(ngModel)]="username"></ion-input>
+        </ion-item>
+        <ion-item color="accent" no-padding>
+          <ion-label color="secondary" floating>Email</ion-label>
+          <ion-input required type="email" [(ngModel)]="email"></ion-input>
+        </ion-item>
+        <ion-item color="accent" no-padding>
+          <ion-label color="secondary" floating>Password</ion-label>
+          <ion-input required type="password" [(ngModel)]="password"></ion-input>
+        </ion-item>
+        <ion-item color="accent" no-padding>
+          <ion-label color="secondary" floating>Confirm Password</ion-label>
+          <ion-input required type="password" ></ion-input>
+        </ion-item>
+        <ion-item color="accent" no-padding>
+          <ion-label color="secondary" floating>Year Of Birth</ion-label>
+          <ion-input required type="number" [(ngModel)]="yob"></ion-input>
+        </ion-item>
+        <ion-item color="accent" no-padding>
+        <ion-label color="secondary" floating>Post Code</ion-label>
+          <ion-input required type="number" [(ngModel)]="post_code"></ion-input>
+        </ion-item><br><br>
+          <!---Login button-->
+        <div align="center">
+        <button style="padding: 0 20% 0 20%; border-radius: 10px" ion-button color="secondary" outline (click)="signup()">SIGN UP</button></div>
+          <!---Register button
+          <button ion-button float-right default-button (click)="onEvent('onRegister')">{{data.register}}</button>-->
+        </ion-col>
+        <!---Share Section-->
+        <!--<ion-col col-12 col-sm-12 col-md-12 offset-lg-3 col-lg-6 offset-xl-3 col-xl-6 social>-->
+          <!---Facebook button
+          <button ion-button color="facebook" (click)="onEvent('onFacebook')">Facebook</button>-->
+          <!---Twitter button-->
+          <!--<button ion-button color="twitter" (click)="onEvent('onTwitter')">Twitter</button> -->
+          <!---Google button
+          <button ion-button color="google" (click)="onEvent('onGoogle')">Google</button>-->
+          <!---Pinterest button-->
+          <!--<button ion-button color="pinterest" (click)="onEvent('onPinterest')">Pinterest</button> 
+        </ion-col>-->
+        <!---End Share Section-->
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+  

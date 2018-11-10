@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>
+      HOME
+    </ion-title>
+    <!-- <ion-buttons end>
+      <button ion-button (click)="scanOnclick()"> <ion-icon name="camera"> </ion-icon></button>
+    </ion-buttons> -->
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div class="second">
+    <h2>Quote of the day</h2>
+    <div>
+      
+      " Coffee has always been a significant part of my life. For me, it's a chance to start my day and gather my thoughts - it's fuel for my creative process. "
+    </div>
+  </div><br>         
+  <div align="center">
+    <div class="circle" (click)="scanCode()">
+      tap to scan
+    </div>
+  </div>
+  <button (click)="scanCodeCopy()">scan</button>
+  <!--
+
+    (timediff > 1) || (!rating_enable && (rate_flag != null)) || rated == true || (availed_coffees - 1 >= x)
+        (timediff < 1) && (availed_coffees == x) && rate_flag && (rate_null == null) && rating_enable && rated == false
+    <svg height="100" width="100">
+      <circle cx=50 cy=50 r="50" stroke="#C19C82" stroke-width="2" fill="#202020"/>
+    </svg>
+  <div *ngIf="scan">
+    <ion-item>
+        <ion-input type="text" [(ngModel)]="title" name="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <button ion-button (click)="generateQR()">Submit</button>
+    </ion-item>
+    <ion-item *ngIf="submitted">
+        <qr-code [value]="title" [size]="200"></qr-code>
+    </ion-item>
+    </div>
+    <ion-fab right bottom margin >
+        <button ion-fab (click)="scanOnclick()"><ion-icon name="camera">
+        </ion-icon></button>
+      </ion-fab> 
+    
+  
+    
+    <div style="display: flex; flex: 100em" >
+      <div (click)="profile()" style="justify-content: flex-start;">
+        <ion-thumbnail>
+          <img src="assets/images/logo/left.png" height=100px width=100px/>
+        </ion-thumbnail>
+      </div>
+      <div (click)="wallet()" style="justify-content: center;">
+        <ion-thumbnail>
+          <img src="assets/images/logo/mid.png" height=100px width=100px>
+        </ion-thumbnail>
+      </div>
+      <div (click)="offers()" style="justify-content: flex-end;">
+        <ion-thumbnail>
+          <img src="assets/images/logo/right.png" height=100px width=100px>
+        </ion-thumbnail>
+      </div>
+    </div>
+    
+    -->
+</ion-content>
+
+<ion-footer style="padding: 0% 0% 0% 8% !important" align="center">
+  <ion-grid>
+    <ion-row>
+      <ion-col float-left no-padding (click)="profile()">
+        <ion-thumbnail>
+          <img src="assets/images/logo/left.png" height=70% width=70%/>
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col style="padding: 0% 10% 0% 10% !important" align="center" (click)="wallet()">
+        <ion-thumbnail>
+          <ion-badge id="notifications-badge" color="accent" *ngIf="cardsCount > 0">{{cardsCount}}</ion-badge>
+          <img src="assets/images/logo/mid.png" height=70% width=70%>      
+        </ion-thumbnail>
+      </ion-col>
+      <ion-col float-right no-padding (click)="offers()">
+        <ion-thumbnail>
+          <ion-badge id="notifications-badge" color="accent" *ngIf="offersData && offer_flag">{{offersData}}</ion-badge>
+          <img src="assets/images/logo/right.png" height=70% width=70%>
+        </ion-thumbnail>
+      </ion-col>
+    </ion-row>
+  </ion-grid><br>
+</ion-footer>

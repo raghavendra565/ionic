@@ -1,0 +1,72 @@
+page-home {
+  .circle {
+    height: 150px;
+    width: 150px;
+    border : 3px solid #C19C82;
+    background-color: #202020 ;
+    border-radius: 50%;
+    color: #C19C82;
+    display: inline-block;
+    margin: 23% 20% 0% 20%;
+    padding: 20% 0 0 0;
+    }
+    #notifications-badge {
+      background-color: #2d7ac2;
+      position: absolute;
+      //top: -3px;
+      //right: -3px;
+      border-radius: 100%;
+  }
+
+  [quote-title] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    
+    color: #2d7ac2;
+    background-color: rgba(42, 41, 41, 0.5)!important;
+    bottom: 0;
+    min-height: 45px;
+    border-bottom: 1px solid transparent !important;
+
+    ion-icon {
+      position: absolute;
+      right: 10px;
+      top: 20px;
+      color: theme-colors('textColors', 'primary');
+      font-size: icon-size('icon-small');
+    }
+  }
+  div.second {
+    padding: 10px;
+    color: #2d7ac2;
+    //background: rgba(255,255,255, 0.3);
+    background: rgba(42, 41, 41, 1);
+    min-height: 45px;
+    border-bottom: 1px solid transparent !important;
+  }
+
+}
+/*#outer-circle {
+  background: #385a94;
+  border-radius: 50%;
+  height: 500px;
+  width: 500px;
+  position: relative;
+   Child elements with absolute positioning will be 
+   positioned relative to this div 
+  
+}
+#inner-circle {
+  position: absolute;
+  background: #a9aaab;
+  border-radius: 50%;
+  height: 300px;
+  width: 300px;
+   Put top edge and left edge in the center
+  top: 50%;
+  left: 50%;
+  margin: -150px 0px 0px -150px;
+   Offset the position correctly with
+   minus half of the width and minus half of the height 
+}*/
