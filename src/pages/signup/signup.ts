@@ -54,7 +54,8 @@ export class SignupPage {
                     this.navCtrl.push(LoginPage);
                   }
                 }, error => {alert(this.msg); 
-                console.log(error)}); 
+                //console.log(error);
+              }); 
         }
         else {
             alert("all fields are required");

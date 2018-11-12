@@ -25,7 +25,8 @@ export class WalletPage {
   i : number;
   next = false;
   b = [];
-  images = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
+  images = [];
+  imagevalue:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
   }
   
@@ -34,16 +35,29 @@ export class WalletPage {
       data => {
          this.cardsData=data;
          this.cardsData = this.cardsData.cards;
-         this.count = this.cardsData[0].card_size + 1;
+         //this.cardsData = this.cardsData[0]["no"] = 6;
+         //console.log(this.cardsData[0]["no"]);
+         this.count = this.cardsData.length;
+         let k =0
+         while(k != this.count){
+          this.cardsData[k]["no"] = k % 6;
+           this.images[k] = k % 6;
+           k = k+1;
+         }
+         //console.log(this.images);
+         //console.log(this.cardsData);
          for(this.i = 0; this.i < this.count ; this.i++){
             this.b[this.i] = this.i;
          }
     },
 
-    error => {console.log(error.status); 
+    error => {//console.log(error.status); 
       if(error.status == 401)
       {
-        this.navCtrl.push(LoginPage);
+        localStorage.removeItem("access_token_cookie");
+        localStorage.removeItem("refresh_token_cookie");
+        this.navCtrl.setRoot(LoginPage);
+        alert(" Session time out... Plese login again");
       }
   });
   }

@@ -23,7 +23,7 @@ export class AngularScannerPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad AngularScannerPage');
+    //console.log('ionViewDidLoad AngularScannerPage');
     this.scanCode();
   }
   createCode() {
@@ -34,7 +34,7 @@ export class AngularScannerPage {
     this.barcodeScanner.scan().then(barcodeData => {
       this.scannedCode = barcodeData.text;
     }, (err) => {
-        console.log('Error: ', err);
+        //console.log('Error: ', err);
     });
   }
 

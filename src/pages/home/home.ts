@@ -39,7 +39,9 @@ export class HomePage {
          //this.cardsData = this.cardsData.cards;
          this.cardsCount = this.cardsData.cards_len;
     },
-    error => {console.log(error.status);});
+    error => {
+      //console.log(error.status);
+    });
 
     this.httpClient.get("http://183.82.112.165:5000/api/coffee/v1/offers/customer").subscribe(
       data => {
@@ -48,7 +50,8 @@ export class HomePage {
         this.offersData = this.offersData.length;
     },
 
-    error => {console.log(error.status); 
+    error => {
+      //console.log(error.status); 
       if(error.status == 401)
       {
         //this.navCtrl.push(LoginPage);
@@ -81,7 +84,7 @@ export class HomePage {
       this.http.post(url, body ,requestOptions).subscribe(data => {
         
         this.result=data.json();
-        console.log(this.result);
+        //console.log(this.result);
         if(this.result.card.free_next == true){
           alert("WoooHoooo!!!    You have unlocked a free coffee!!!");
         }
@@ -89,16 +92,16 @@ export class HomePage {
           alert("WoooHoooo!!!  it's a free coffee!!!");
         }
         //alert(this.result.msg);
-        console.log(this.result.card,"home ")
+        //console.log(this.result.card,"home ")
         this.navCtrl.push(CardPage, {data: this.result.card});
       
       }, error => {alert("something went wrong... it may be network problem");})
     }, (err) => {
-        console.log('Error: ', err);
+        //console.log('Error: ', err);
     });
   }
 
-  scanCodeCopy() {
+/*  scanCodeCopy() {
       this.scannedCode = "$2b$12$RMqFc/2mztXQajvUPGqg5ejj6/s9/UduF9gijelyEiFpjPigBRLfW";
       //alert(this.scannedCode);
       console.log("signup");
@@ -126,7 +129,7 @@ export class HomePage {
         this.navCtrl.push(CardPage, {data: this.result.card});
       
       }, error => {alert(error);})
-  }
+  } */
   profile(){
     this.navCtrl.push(ProfilePage);
   }

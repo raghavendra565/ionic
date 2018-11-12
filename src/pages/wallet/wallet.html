@@ -50,7 +50,7 @@
   <div *ngFor="let x of cardsData">
     <div (click)="cardDetail(x)">
       <div float-left>
-        <img src="/assets/images/logo/{{images[0]}}" height=50px width=50px/>
+        <img src="/assets/images/logo/{{images[x.no]}}.png" height=50px width=50px/>
               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       </div><br>
       <div> <h3>{{x.retailer}}</h3></div>

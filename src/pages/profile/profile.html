@@ -11,7 +11,9 @@
   </ion-navbar>
 
 </ion-header>
-<ion-content padding>
+<ion-content padding >
+  <div align="center">
+  <img src="/assets/images/logo/profile.png" height=50px width=50px/></div>
   <h2>First name : <span>{{first_name}}</span></h2>
   <h2>Last name : <span>{{last_name}}</span></h2>
   <h2>Email : <span>{{email}}</span></h2>
@@ -19,5 +21,7 @@
   <h2>Year of birth : <span>{{yob}}</span></h2>
   <h2>Post code : <span>{{post_code}}</span></h2>
   <h2>Total coffee's availed : <span>{{coffee_total}}</span></h2>
-  <h2>Free coffee's availed : <span>{{coffee_free_availed}}</span></h2>
+  <h2>Free coffee's availed : <span>{{coffee_free_availed}}</span></h2><br>
+  <div align="center">
+      <button style="padding: 0 20% 0 20%; border-radius: 10px; color: #BB9175" ion-button color="secondary" outline (click)="onNextPage()">Logout</button></div>
 </ion-content>

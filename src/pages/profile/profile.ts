@@ -46,12 +46,20 @@ export class ProfilePage {
       this.yob= this.profileData["profile"]["yob"];
     },
 
-    error => {console.log(error.status);
+    error => {//console.log(error.status);
       if(error.status == 401)
       {
-        this.navCtrl.push(LoginPage);
+        localStorage.removeItem("access_token_cookie");
+        localStorage.removeItem("refresh_token_cookie");
+        this.navCtrl.setRoot(LoginPage);
+        alert(" Session time out... Plese login again");
       }
     });
+  }
+  onNextPage(){
+    localStorage.removeItem("access_token_cookie");
+    localStorage.removeItem("refresh_token_cookie");
+    this.navCtrl.setRoot(LoginPage);
   }
 
 }

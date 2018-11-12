@@ -32,10 +32,12 @@ export class RatingPage {
      public events: Events) {
       this.ratedata = navParams.get('data');
       this.coffee_number = navParams.get('x');
-      console.log(this.coffee_number, "x");
-      console.log(this.ratedata,"rate data");
+      //console.log(this.coffee_number, "x");
+      //console.log(this.ratedata,"rate data");
       this.coffees = this.ratedata.coffees;
-      events.subscribe('star-rating:changed', (starRating) => {console.log(starRating);this.rating=starRating});
+      events.subscribe('star-rating:changed', (starRating) => {
+        //console.log(starRating);
+        this.rating=starRating});
   }
   
   
@@ -56,11 +58,11 @@ export class RatingPage {
                             "retailer_id":this.ratedata.retailer_id,
                             "coffees":this.coffees,
                           "no":this.coffee_number});
-      console.log(body)
+      //console.log(body)
       this.http.patch(url, body ,requestOptions).subscribe(data => {
         
         this.result=data.json();
-        console.log(this.result);
+        //console.log(this.result);
       }, error => {alert(error);})
     this.navCtrl.pop();
   }

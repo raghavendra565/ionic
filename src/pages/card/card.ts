@@ -41,13 +41,13 @@ export class CardPage {
     private barcodeScanner: BarcodeScanner,private alertCtrl: AlertController,
     private auth : AuthService,private http: Http) {
     this.data = navParams.get('data');
-    console.log(this.data);
+    //console.log(this.data);
     this.rating_enable = this.data.rating_en;
     this.card_size = this.data.card_size;
     this.rate_flag = this.data.rating;
-    console.log(this.card_size);
+    //console.log(this.card_size);
     this.availed_coffees = this.data.coffees;
-    console.log(this.availed_coffees);
+    //console.log(this.availed_coffees);
     this.t2 = new Date(this.data.punch_time);
     let i = 0;
     let j = 0;
@@ -58,7 +58,7 @@ export class CardPage {
     this.c = i;
     //console.log(this.c);
     this.remaining_coffees = this.card_size - this.availed_coffees-1;
-    console.log(this.remaining_coffees);
+    //console.log(this.remaining_coffees);
     for(j=1; j<=this.remaining_coffees; j++){
       this.b[j-1] = j;
     }
@@ -92,7 +92,7 @@ export class CardPage {
       this.http.post(url, body ,requestOptions).subscribe(data => {
         
         this.result=data.json();
-        console.log(this.result);
+        //console.log(this.result);
         if(this.result.card.free_next == true){
           alert("WoooHoooo!!!    You have unlocked a free coffee!!!");
         }
@@ -100,12 +100,12 @@ export class CardPage {
           alert("WoooHoooo!!!  it's a free coffee!!!");
         }
         //alert(this.result.msg);
-        console.log(this.result.card,"home ")
+        //console.log(this.result.card,"home ")
         this.navCtrl.push(CardPage, {data: this.result.card});
       
       }, error => {alert("something went wrong... it may be network problem");})
     }, (err) => {
-        console.log('Error: ', err);
+        //console.log('Error: ', err);
     });
   }
   starRating(){
@@ -132,13 +132,13 @@ export class CardPage {
         {
           text: 'Cancel',
           handler: data => {
-            console.log('Cancel clicked');
+            //console.log('Cancel clicked');
           }
         },
         {
           text: 'Save',
           handler: data => {
-            console.log('Saved clicked');
+            //console.log('Saved clicked');
           }
         }
       ]

@@ -1,3 +1,4 @@
+import { HomePage } from './../home/home';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginServiceProvider } from '../../providers/login-service/login-service';
@@ -43,6 +44,11 @@ export class LoginPage {
     };
 
   ionViewDidLoad() {
+    //console.log(localStorage.getItem("access_token_cookie"));
+    //console.log(localStorage.getItem("refresh_token_cookie"));
+    if((localStorage.getItem("access_token_cookie") != null ) && (localStorage.getItem("refresh_token_cookie"))){
+      this.navCtrl.setRoot(HomePage);
+    }
   }
 
 }
